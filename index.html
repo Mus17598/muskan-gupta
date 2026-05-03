@@ -1250,38 +1250,93 @@
       .hero-right-col { display: none; }
     }
     @media (max-width: 768px) {
+      /* Global */
+      html { overflow-x: hidden; }
+      :root {
+        --shadow: 3px 3px 0 #000;
+        --shadow-lg: 4px 4px 0 #000;
+        --shadow-lime: 3px 3px 0 var(--lime-dark);
+      }
+
+      /* Nav */
       nav { padding: 0 20px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
-      .s-inner { padding: 56px 24px; }
+
+      /* Sections */
+      .s-inner { padding: 48px 20px; }
+
+      /* Hero */
+      .hero-corner-block { display: none; }
       .hero-globe-wrap { display: none; }
-      .hero-left { padding: 36px 24px 32px; }
-      .hero-headline { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+      .hero-left { padding: 32px 20px 28px; }
+      .hero-headline { font-size: clamp(2.4rem, 9vw, 4rem); }
+      .hero-eyebrow { white-space: normal; }
       .hero-sub-row { flex-direction: column; align-items: flex-start; gap: 20px; }
-      .hero-stats-strip { grid-template-columns: repeat(3,1fr); }
-      .hero-strip-cell:nth-child(4),
-      .hero-strip-cell:nth-child(5) { border-top: 2.5px solid rgba(255,255,255,0.12); }
+      .hero-actions { flex-direction: column; width: 100%; }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-lime-solid { display: block; text-align: center; width: 100%; box-sizing: border-box; }
+
+      /* Stats strip — 2 cols so nothing clips */
+      .hero-stats-strip { grid-template-columns: 1fr 1fr; }
+      .hero-strip-cell { padding: 16px 16px; }
+      .hero-strip-cell:nth-child(3),
+      .hero-strip-cell:nth-child(4) { border-top: 2.5px solid rgba(255,255,255,0.12); }
+      .hero-strip-cell:nth-child(5) { display: none; }
+      .strip-num { font-size: 1.6rem; }
+
+      /* Stats section */
       .stats-row { grid-template-columns: 1fr; }
-      .stat-cell { border-right: none; border-bottom: 2.5px solid rgba(255,255,255,0.1); }
+      .stat-cell { border-right: none; border-bottom: 2.5px solid rgba(255,255,255,0.1); padding: 40px 24px; }
+      .stat-big { font-size: clamp(3rem, 12vw, 5rem); }
+
+      /* About */
       .about-grid { grid-template-columns: 1fr; gap: 32px; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
+
+      /* Services */
+      .services-top { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .svc-card { border-right: none; border-bottom: var(--border-thick); }
+      .svc-card:last-child { border-bottom: none; }
+
+      /* Why Me */
       .why-grid { grid-template-columns: 1fr; gap: 40px; }
-      .why-cards { grid-template-columns: 1fr 1fr; }
+      .why-cards { grid-template-columns: 1fr; }
+
+      /* Clients */
       .client-grid { grid-template-columns: 1fr; }
+
+      /* Testimonials */
       .testi-grid { grid-template-columns: 1fr; }
+      .testi-card { margin-top: 20px; }
+
+      /* Process */
       .process-grid { grid-template-columns: 1fr; }
-      .proc-step { border-right: none; border-bottom: var(--border-thick); }
+      .proc-step { border-right: none; border-bottom: var(--border-thick); padding: 32px 24px; }
       .proc-step:last-child { border-bottom: none; }
+
+      /* Contact */
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-btns { flex-direction: column; }
+      .contact-btns a { text-align: center; justify-content: center; }
+
+      /* Footer */
       .footer-top { grid-template-columns: 1fr; }
-      .footer-brand { border-right: none; border-bottom: 2.5px solid rgba(255,255,255,0.1); padding: 32px 24px; }
-      .footer-links { align-items: flex-start; padding: 28px 24px; }
-      .footer-bottom { flex-direction: column; gap: 8px; align-items: flex-start; padding: 16px 24px; }
+      .footer-brand { border-right: none; border-bottom: 2.5px solid rgba(255,255,255,0.1); padding: 32px 20px; }
+      .footer-links { align-items: flex-start; padding: 28px 20px; }
+      .footer-bottom { flex-direction: column; gap: 8px; align-items: flex-start; padding: 16px 20px; }
     }
     @media (max-width: 480px) {
-      .hero-headline { font-size: 2.6rem; }
-      .why-cards { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
+      .hero-headline { font-size: 2.2rem; }
+      .s-heading { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+      .s-inner { padding: 40px 16px; }
+      .hero-left { padding: 28px 16px 24px; }
+      .hero-strip-cell { padding: 14px 12px; }
+      .strip-num { font-size: 1.4rem; }
+      .stat-cell { padding: 32px 16px; }
+      .testi-qmark { left: 16px; }
+      .client-card { padding: 24px 20px; }
+      .testi-card { padding: 28px 20px; padding-top: 36px; }
     }
   </style>
 </head>
