@@ -7,10 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
-  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-  <script type="text/babel" src="tweaks-panel.jsx"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1714,52 +1710,6 @@
   </div>
 </footer>
 
-<!-- TWEAKS -->
-<div id="tweaks-root"></div>
-
-<script type="text/babel">
-const TWEAK_DEFAULS = /*EDITMODE-BEGIN*/{
-  "accentColor": "#C8F135",
-  "bgColor": "#F2EDE4",
-  "shadowSize": "5"
-}/*EDITMODE-END*/;
-
-function PortfolioTweaks() {
-  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULS);
-
-  React.useEffect(() => {
-    const r = document.documentElement;
-    r.style.setProperty('--lime', tweaks.accentColor);
-    r.style.setProperty('--lime-dark', tweaks.accentColor);
-  }, [tweaks.accentColor]);
-
-  React.useEffect(() => {
-    const r = document.documentElement;
-    r.style.setProperty('--bg', tweaks.bgColor);
-    r.style.setProperty('--bg-alt', tweaks.bgColor);
-  }, [tweaks.bgColor]);
-
-  React.useEffect(() => {
-    const s = parseInt(tweaks.shadowSize);
-    const r = document.documentElement;
-    r.style.setProperty('--shadow', `${s}px ${s}px 0 #000`);
-    r.style.setProperty('--shadow-lg', `${s+3}px ${s+3}px 0 #000`);
-  }, [tweaks.shadowSize]);
-
-  return (
-    <TweaksPanel title="Tweaks">
-      <TweakSection label="Colors">
-        <TweakColor label="Accent" value={tweaks.accentColor} onChange={v => setTweak('accentColor', v)} />
-        <TweakColor label="Background" value={tweaks.bgColor} onChange={v => setTweak('bgColor', v)} />
-      </TweakSection>
-      <TweakSection label="Style">
-        <TweakSlider label="Shadow size" value={parseInt(tweaks.shadowSize)} min={2} max={12} step={1} onChange={v => setTweak('shadowSize', String(v))} />
-      </TweakSection>
-    </TweaksPanel>
-  );
-}
-ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<PortfolioTweaks />);
-</script>
 
 <script>
 // NAV scroll
