@@ -151,11 +151,21 @@
     }
     .live { margin-left: auto; display: flex; align-items: center; gap: 6px; }
     .live::before { content: ""; width: 8px; height: 8px; background: var(--black); border-radius: 50%; }
-    .frame img {
-      width: 100%; aspect-ratio: 390 / 844; max-height: 720px;
-      object-fit: cover; object-position: top center; background: #111; margin: 0 auto;
+    .frame:not(.wide) {
+      max-width: 380px; width: 100%; justify-self: center;
     }
-    .frame.wide img { aspect-ratio: 1120 / 820; max-height: none; }
+    .frame img {
+      width: 100%; height: auto; aspect-ratio: 390 / 844;
+      object-fit: contain; object-position: top center; background: #111; margin: 0 auto;
+      image-rendering: auto;
+    }
+    .frame.wide {
+      max-width: none; width: 100%;
+    }
+    .frame.wide img {
+      width: 100%; height: auto; aspect-ratio: 16 / 10;
+      object-fit: contain; object-position: top center;
+    }
     .caption {
       display: flex; justify-content: space-between; gap: 16px; padding: 14px 16px 16px;
       background: var(--white); border-top: var(--border);
@@ -212,7 +222,7 @@
       .hero, .studio, .col, .close { padding-left: 22px; padding-right: 22px; }
       .hero-row, .studio-head, .close, footer { flex-direction: column; align-items: flex-start; }
       footer { padding-left: 22px; padding-right: 22px; }
-      .frame img { max-height: 560px; }
+      .frame:not(.wide) { max-width: 320px; margin-inline: auto; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 16px; }
@@ -259,6 +269,7 @@
       <div class="actions">
         <a class="btn btn-black" href="#public">Public site</a>
         <a class="btn btn-lime" href="#app">Customer app</a>
+        <a class="btn btn-lime" href="#desk">Kitchen desk</a>
       </div>
     </div>
     <div class="strip" aria-label="Included from day one">
@@ -324,7 +335,7 @@
   <section class="studio" id="desk" data-studio="desk">
     <div class="studio-head">
       <h2>Kitchen desk<br>the same day.</h2>
-      <p>Overview, inquiries, and tickets — enough to show the desk without opening every customer list.</p>
+      <p>Overview, tickets, dispatch, inquiries, customers, and analytics — the desk a kitchen runs from day one.</p>
     </div>
     <div class="stage">
       <div class="shots" role="listbox" aria-label="Kitchen desk screens"></div>
@@ -507,18 +518,39 @@
           alt: "Kitchen desk overview with today scorecards and needs action"
         },
         {
-          kicker: "02 · Inquiries",
+          kicker: "02 · Ticket",
+          title: "Open a ticket, reply in place",
+          body: "Category, owner, priority, and a live thread next to the order. Contact details are blurred on this public page.",
+          src: "screens/admin-tickets.jpg",
+          alt: "Kitchen desk ticket thread with support conversation"
+        },
+        {
+          kicker: "03 · Dispatch",
+          title: "Routes out to the vans",
+          body: "Send stops, pull OptimoRoute plans, and track what’s on the road versus done.",
+          src: "screens/admin-dispatch.jpg",
+          alt: "Dispatch desk with OptimoRoute send and stop filters"
+        },
+        {
+          kicker: "04 · Inquiries",
           title: "Leads before they become a plan",
           body: "Import, quick add, follow-up queue, and conversion. The same desk that turns a lead into an order.",
           src: "screens/admin-inquiries.jpg",
           alt: "Inquiries desk with lead scorecards and follow-up queue"
         },
         {
-          kicker: "03 · Tickets",
-          title: "Chat next to the order",
-          body: "Category, owner, priority, and a thread with the customer. Contact details are blurred on this public page.",
-          src: "screens/admin-tickets.jpg",
-          alt: "Kitchen desk tickets page with support conversation"
+          kicker: "05 · Customers",
+          title: "Who’s on a plan — and who isn’t",
+          body: "Joined, ordered, repeat buyers, and invites. Names are blurred on this public page.",
+          src: "screens/admin-customers.jpg",
+          alt: "Customers desk with scorecards and customer list"
+        },
+        {
+          kicker: "06 · Analytics",
+          title: "Revenue, trials, and tickets",
+          body: "Net revenue, trial conversion, customer status, and day-by-day performance in one place.",
+          src: "screens/admin-analytics.jpg",
+          alt: "Analytics overview with revenue mix and trial conversion"
         }
       ]
     };
