@@ -946,6 +946,21 @@
       color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 20px;
     }
     .client-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .client-more {
+      display: inline-block;
+      margin-top: 18px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+      background: var(--lime);
+      border: 1.5px solid var(--lime);
+      padding: 6px 10px;
+    }
+    .client-more:hover { background: var(--white); }
     .client-tag {
       font-family: var(--font-mono);
       font-size: 0.65rem; font-weight: 700;
@@ -1393,6 +1408,7 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why Me</a></li>
     <li><a href="#clients">Clients</a></li>
+    <li><a href="meal-subscriptions/">Product</a></li>
     <li><a href="#contact" class="nav-cta">Let's talk →</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -1406,6 +1422,7 @@
   <a href="#services" onclick="closeMobileMenu()">Services</a>
   <a href="#why" onclick="closeMobileMenu()">Why Me</a>
   <a href="#clients" onclick="closeMobileMenu()">Clients</a>
+  <a href="meal-subscriptions/" onclick="closeMobileMenu()">Product</a>
   <a href="#contact" onclick="closeMobileMenu()">Let's talk →</a>
 </div>
 
@@ -1653,6 +1670,7 @@
           <span class="client-tag">Ads</span>
           <span class="client-tag">Growth Strategy</span>
         </div>
+        <a class="client-more" href="meal-subscriptions/">Meal subscriptions →</a>
       </div>
       <div class="client-card reveal reveal-delay-2">
         <div class="client-top">
