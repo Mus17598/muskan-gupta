@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meal subscriptions — Muskan Gupta</title>
-  <meta name="description" content="A meal subscription product that is live from day one. Real screens: storefront, plan builder, weekly menu, pricing, and the customer deliveries app. Everything else is built to the kitchen." />
+  <meta name="description" content="A meal subscription product live from day one. Real screens: storefront, subscribe, customer app, and kitchen desk. Everything else is built to the brief." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
@@ -15,7 +15,6 @@
       --black: #000;
       --white: #fff;
       --lime: #C8F135;
-      --lime-dark: #a8cc22;
       --border: 2.5px solid #000;
       --border-thick: 4px solid #000;
       --shadow: 5px 5px 0 #000;
@@ -36,129 +35,65 @@
     button, a { -webkit-tap-highlight-color: transparent; }
 
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      height: 60px;
-      background: var(--bg);
-      border-bottom: var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 32px;
+      position: sticky; top: 0; z-index: 20; height: 60px;
+      background: var(--bg); border-bottom: var(--border);
+      display: flex; align-items: center; justify-content: space-between; padding: 0 32px;
     }
     .nav-logo {
-      font-family: var(--mono);
-      font-weight: 700;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      letter-spacing: -0.02em;
+      font-family: var(--mono); font-weight: 700; text-decoration: none;
+      display: flex; align-items: center; gap: 8px; letter-spacing: -0.02em;
     }
     .nav-logo-tag {
-      background: var(--lime);
-      font-size: 0.6rem;
-      padding: 2px 6px;
-      border: 1.5px solid var(--black);
-      letter-spacing: 0.08em;
+      background: var(--lime); font-size: 0.6rem; padding: 2px 6px;
+      border: 1.5px solid var(--black); letter-spacing: 0.08em;
     }
     .nav-links { display: flex; list-style: none; }
     .nav-links li { border-left: var(--border); }
     .nav-links a {
-      display: block;
-      padding: 8px 18px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      display: block; padding: 8px 18px; font-size: 0.78rem; font-weight: 600;
+      text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase;
     }
     .nav-links a:hover, .nav-links a[aria-current="page"] { background: var(--lime); }
     .nav-cta { background: var(--black); color: var(--white) !important; }
     .nav-cta:hover { background: var(--lime) !important; color: var(--black) !important; }
     .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: none;
-      border: 0;
-      cursor: pointer;
-      padding: 4px;
+      display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 4px;
     }
     .hamburger span { display: block; width: 22px; height: 2px; background: var(--black); }
-    .mobile-menu {
-      display: none;
-      border-bottom: var(--border-thick);
-      background: var(--bg);
-    }
+    .mobile-menu { display: none; border-bottom: var(--border-thick); background: var(--bg); }
     .mobile-menu.open { display: flex; flex-direction: column; }
     .mobile-menu a {
-      padding: 16px 24px;
-      font-weight: 700;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      border-bottom: var(--border);
+      padding: 16px 24px; font-weight: 700; text-decoration: none; text-transform: uppercase;
+      letter-spacing: 0.04em; border-bottom: var(--border);
     }
     .mobile-menu a:hover { background: var(--lime); }
 
-    .hero {
-      border-bottom: var(--border-thick);
-      padding: 56px 48px 0;
-    }
+    .hero { border-bottom: var(--border-thick); padding: 56px 48px 0; }
     .eyebrow {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.55;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.55;
+      display: flex; align-items: center; gap: 8px;
     }
     .eyebrow::before { content: ""; width: 20px; height: 2px; background: var(--black); }
     h1 {
-      margin-top: 22px;
-      font-size: clamp(3.2rem, 7.4vw, 6.4rem);
-      line-height: 0.92;
-      letter-spacing: -0.045em;
-      font-weight: 700;
-      max-width: 14ch;
+      margin-top: 22px; font-size: clamp(3.2rem, 7.4vw, 6.4rem);
+      line-height: 0.92; letter-spacing: -0.045em; font-weight: 700; max-width: 14ch;
     }
     h1 .quiet { font-weight: 300; color: rgba(0,0,0,0.38); display: block; }
     .lime-box {
-      display: inline-block;
-      background: var(--lime);
-      border: var(--border-thick);
-      box-shadow: var(--shadow);
-      padding: 0 12px 4px;
+      display: inline-block; background: var(--lime); border: var(--border-thick);
+      box-shadow: var(--shadow); padding: 0 12px 4px;
     }
     .hero-row {
-      margin-top: 28px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 32px;
-      padding-bottom: 40px;
+      margin-top: 28px; display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 32px; padding-bottom: 40px;
     }
-    .lede {
-      max-width: 440px;
-      font-size: 1.05rem;
-      color: rgba(0,0,0,0.68);
-    }
+    .lede { max-width: 460px; font-size: 1.05rem; color: rgba(0,0,0,0.68); }
     .lede strong { color: var(--black); }
     .actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-weight: 700;
-      border: var(--border);
-      padding: 12px 18px;
-      box-shadow: var(--shadow);
+      display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+      font-weight: 700; border: var(--border); padding: 12px 18px; box-shadow: var(--shadow);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
     .btn:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-lg); }
@@ -166,115 +101,64 @@
     .btn-black { background: var(--black); color: var(--white); }
     .btn-lime { background: var(--lime); color: var(--black); }
     .btn:focus-visible, .shot:focus-visible, .hamburger:focus-visible {
-      outline: 3px solid var(--black);
-      outline-offset: 3px;
+      outline: 3px solid var(--black); outline-offset: 3px;
     }
 
     .strip {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      background: var(--black);
-      color: var(--white);
-      border-top: var(--border-thick);
+      display: grid; grid-template-columns: repeat(6, 1fr);
+      background: var(--black); color: var(--white); border-top: var(--border-thick);
     }
     .strip span {
-      padding: 16px 12px;
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-right: 1px solid rgba(255,255,255,0.16);
-      text-align: center;
+      padding: 16px 12px; font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      border-right: 1px solid rgba(255,255,255,0.16); text-align: center;
     }
     .strip span:last-child { border-right: 0; }
 
     .studio { padding: 56px 48px 64px; border-bottom: var(--border-thick); }
+    .studio.alt { background: #ece7dc; }
     .studio-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 24px;
-      margin-bottom: 28px;
+      display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 28px;
     }
     .studio-head h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      letter-spacing: -0.04em;
-      line-height: 0.95;
+      font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -0.04em; line-height: 0.95;
     }
-    .studio-head p { max-width: 340px; font-size: 0.95rem; color: rgba(0,0,0,0.65); }
+    .studio-head p { max-width: 360px; font-size: 0.95rem; color: rgba(0,0,0,0.65); }
     .stage {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 22px;
-      align-items: start;
+      display: grid; grid-template-columns: minmax(220px, 280px) 1fr; gap: 22px; align-items: start;
     }
     .shots { display: flex; flex-direction: column; border: var(--border); background: var(--white); }
     .shot {
-      text-align: left;
-      background: transparent;
-      border: 0;
-      border-bottom: var(--border);
-      padding: 16px 16px 14px;
-      cursor: pointer;
-      font: inherit;
-      color: inherit;
+      text-align: left; background: transparent; border: 0; border-bottom: var(--border);
+      padding: 14px 16px 12px; cursor: pointer; font: inherit; color: inherit;
     }
     .shot:last-child { border-bottom: 0; }
     .shot:hover { background: #f7f3ea; }
     .shot[aria-pressed="true"] { background: var(--lime); }
     .shot-kicker {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
     }
-    .shot-title { display: block; margin-top: 4px; font-weight: 700; font-size: 1.05rem; letter-spacing: -0.02em; }
-    .frame {
-      border: var(--border-thick);
-      box-shadow: var(--shadow-lg);
-      background: var(--black);
-    }
+    .shot-title { display: block; margin-top: 4px; font-weight: 700; font-size: 1rem; letter-spacing: -0.02em; }
+    .frame { border: var(--border-thick); box-shadow: var(--shadow-lg); background: var(--black); }
     .frame-bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      background: var(--lime);
-      border-bottom: var(--border-thick);
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--lime);
+      border-bottom: var(--border-thick); font-family: var(--mono); font-size: 0.72rem;
+      font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
     }
     .dots { display: flex; gap: 5px; }
-    .dots i { width: 9px; height: 9px; border: 1.5px solid #000; border-radius: 50%; display: block; background: var(--white); }
-    .live {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+    .dots i {
+      width: 9px; height: 9px; border: 1.5px solid #000; border-radius: 50%; display: block; background: var(--white);
     }
-    .live::before {
-      content: "";
-      width: 8px; height: 8px;
-      background: var(--black);
-      border-radius: 50%;
-    }
+    .live { margin-left: auto; display: flex; align-items: center; gap: 6px; }
+    .live::before { content: ""; width: 8px; height: 8px; background: var(--black); border-radius: 50%; }
     .frame img {
-      width: 100%;
-      aspect-ratio: 1120 / 820;
-      object-fit: cover;
-      object-position: top center;
-      background: #111;
+      width: 100%; aspect-ratio: 390 / 844; max-height: 720px;
+      object-fit: cover; object-position: top center; background: #111; margin: 0 auto;
     }
+    .frame.wide img { aspect-ratio: 1120 / 820; max-height: none; }
     .caption {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 16px 16px;
-      background: var(--white);
-      border-top: var(--border);
+      display: flex; justify-content: space-between; gap: 16px; padding: 14px 16px 16px;
+      background: var(--white); border-top: var(--border);
     }
     .caption strong { display: block; letter-spacing: -0.02em; }
     .caption p { margin-top: 4px; font-size: 0.92rem; color: rgba(0,0,0,0.68); max-width: 62ch; }
@@ -283,70 +167,40 @@
     .split { display: grid; grid-template-columns: 1.15fr 0.85fr; border-bottom: var(--border-thick); }
     .col { padding: 56px 48px; }
     .col h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.04em;
-      line-height: 0.95;
-      margin: 12px 0 18px;
+      font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.04em; line-height: 0.95; margin: 12px 0 18px;
     }
     .day { background: var(--black); color: var(--white); }
     .day .eyebrow { opacity: 0.7; }
     .day .eyebrow::before { background: var(--lime); }
     .groups { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 28px; }
     .groups h3 {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--lime);
-      margin-bottom: 10px;
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--lime); margin-bottom: 10px;
     }
     .groups li {
-      list-style: none;
-      padding: 7px 0;
-      border-top: 1px solid rgba(255,255,255,0.14);
-      font-size: 0.95rem;
+      list-style: none; padding: 7px 0; border-top: 1px solid rgba(255,255,255,0.14); font-size: 0.95rem;
     }
     .later { background: var(--bg); }
     .later li {
-      list-style: none;
-      margin-top: 12px;
-      padding: 14px 16px;
-      background: var(--white);
-      border: var(--border);
-      box-shadow: var(--shadow);
-      font-weight: 600;
+      list-style: none; margin-top: 12px; padding: 14px 16px; background: var(--white);
+      border: var(--border); box-shadow: var(--shadow); font-weight: 600;
     }
     .later li span { display: block; font-weight: 400; color: rgba(0,0,0,0.62); margin-top: 2px; }
     .note {
-      margin-top: 28px;
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.02em;
-      color: rgba(255,255,255,0.55);
-      max-width: 46ch;
+      margin-top: 28px; font-family: var(--mono); font-size: 0.75rem;
+      letter-spacing: 0.02em; color: rgba(255,255,255,0.55); max-width: 46ch;
     }
 
     .close {
-      padding: 64px 48px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 28px;
+      padding: 64px 48px; display: flex; align-items: flex-end; justify-content: space-between; gap: 28px;
     }
     .close h2 {
-      font-size: clamp(2.6rem, 6vw, 5rem);
-      letter-spacing: -0.045em;
-      line-height: 0.92;
+      font-size: clamp(2.6rem, 6vw, 5rem); letter-spacing: -0.045em; line-height: 0.92;
     }
     footer {
-      border-top: var(--border);
-      padding: 18px 48px 28px;
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.04em;
+      border-top: var(--border); padding: 18px 48px 28px; display: flex;
+      justify-content: space-between; gap: 12px; font-family: var(--mono);
+      font-size: 0.72rem; letter-spacing: 0.04em;
     }
     footer a { text-decoration: none; }
     footer a:hover { background: var(--lime); }
@@ -358,6 +212,7 @@
       .hero, .studio, .col, .close { padding-left: 22px; padding-right: 22px; }
       .hero-row, .studio-head, .close, footer { flex-direction: column; align-items: flex-start; }
       footer { padding-left: 22px; padding-right: 22px; }
+      .frame img { max-height: 560px; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 16px; }
@@ -400,63 +255,92 @@
       <span class="lime-box">from day one.</span>
     </h1>
     <div class="hero-row">
-      <p class="lede">Customers build a plan, see the week’s menu, pause a day, and pay. The kitchen runs orders, dispatch, renewals, and money in the same product. <strong>These are real screens from a kitchen already using it.</strong> The name, menu, and colours become yours.</p>
+      <p class="lede">Storefront, subscribe, the signed-in customer app, and the kitchen desk. <strong>These are real screens from a kitchen already running it.</strong> The name, menu, and colours become yours. Extra work is scoped from the brief.</p>
       <div class="actions">
-        <a class="btn btn-black" href="#screens">See the screens</a>
-        <a class="btn btn-lime" href="../#contact">Let's talk →</a>
+        <a class="btn btn-black" href="#public">Public site</a>
+        <a class="btn btn-lime" href="#app">Customer app</a>
       </div>
     </div>
     <div class="strip" aria-label="Included from day one">
       <span>Storefront</span>
       <span>Subscribe</span>
-      <span>Weekly menu</span>
       <span>Deliveries</span>
-      <span>Payments</span>
+      <span>Support</span>
+      <span>Wallet</span>
       <span>Kitchen desk</span>
     </div>
   </header>
 
-  <section class="studio" id="screens">
+  <section class="studio" id="public" data-studio="public">
     <div class="studio-head">
-      <h2>The screens<br>a customer meets.</h2>
-      <p>Five major surfaces, captured from the live product. Click a screen. Nothing here is a mockup.</p>
+      <h2>Public site<br>before they sign in.</h2>
+      <p>How a kitchen shows up on the open web. Plans, menu, and price before pay.</p>
     </div>
     <div class="stage">
-      <div class="shots" role="listbox" aria-label="Product screens">
-        <button class="shot" type="button" role="option" aria-pressed="true">
-          <span class="shot-kicker">01 · Storefront</span>
-          <span class="shot-title">Today’s tiffin, on the door</span>
-        </button>
-        <button class="shot" type="button" role="option" aria-pressed="false">
-          <span class="shot-kicker">02 · Subscribe</span>
-          <span class="shot-title">Price before they pay</span>
-        </button>
-        <button class="shot" type="button" role="option" aria-pressed="false">
-          <span class="shot-kicker">03 · Weekly menu</span>
-          <span class="shot-title">The released week</span>
-        </button>
-        <button class="shot" type="button" role="option" aria-pressed="false">
-          <span class="shot-kicker">04 · Plans</span>
-          <span class="shot-title">Rates, trials, longer plans</span>
-        </button>
-        <button class="shot" type="button" role="option" aria-pressed="false">
-          <span class="shot-kicker">05 · Deliveries</span>
-          <span class="shot-title">Pause, move, edit the meal</span>
-        </button>
-      </div>
+      <div class="shots" role="listbox" aria-label="Public screens"></div>
+      <figure class="frame wide">
+        <div class="frame-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>public site</span>
+          <span class="live">Live</span>
+        </div>
+        <img alt="" />
+        <figcaption class="caption">
+          <div>
+            <strong></strong>
+            <p></p>
+          </div>
+          <span class="count"></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="studio alt" id="app" data-studio="app">
+    <div class="studio-head">
+      <h2>The app<br>after they subscribe.</h2>
+      <p>Signed-in customer: deliveries, pause, support, referrals, wallet, and account. Captured from a live login.</p>
+    </div>
+    <div class="stage">
+      <div class="shots" role="listbox" aria-label="Customer app screens"></div>
       <figure class="frame">
         <div class="frame-bar">
           <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-          <span>meal subscriptions</span>
+          <span>customer app</span>
           <span class="live">Live</span>
         </div>
-        <img id="screen" src="screens/home.jpg" alt="Storefront with today’s tiffin and a path to build a plan" />
+        <img alt="" />
         <figcaption class="caption">
           <div>
-            <strong id="cap-title">Today’s tiffin, on the door</strong>
-            <p id="cap-body">A public storefront with the day’s meal, an offer, and one path into a plan. Your kitchen’s name sits where this one does.</p>
+            <strong></strong>
+            <p></p>
           </div>
-          <span class="count" id="cap-count">01 / 05</span>
+          <span class="count"></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="studio" id="desk" data-studio="desk">
+    <div class="studio-head">
+      <h2>Kitchen desk<br>the same day.</h2>
+      <p>Staff tickets sit next to orders, renewals, dispatch, and money. Customer details are blurred on this public page.</p>
+    </div>
+    <div class="stage">
+      <div class="shots" role="listbox" aria-label="Kitchen desk screens"></div>
+      <figure class="frame wide">
+        <div class="frame-bar">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>kitchen desk</span>
+          <span class="live">Live</span>
+        </div>
+        <img alt="" />
+        <figcaption class="caption">
+          <div>
+            <strong></strong>
+            <p></p>
+          </div>
+          <span class="count"></span>
         </figcaption>
       </figure>
     </div>
@@ -468,31 +352,29 @@
       <h2>Ready the day the kitchen opens.</h2>
       <div class="groups">
         <div>
-          <h3>For customers</h3>
+          <h3>Customer app</h3>
           <ul>
-            <li>Storefront, offers, and delivery zones</li>
-            <li>Plan builder: diet, size, add-ons, days, weeks</li>
-            <li>Price shown before payment</li>
-            <li>One-day trial</li>
-            <li>Weekly menu and dish picks</li>
-            <li>Calendar: pause, resume, move, makeup</li>
-            <li>Card and Interac e-Transfer</li>
-            <li>Coupons, referral coins, wallet</li>
-            <li>Support tickets with an order and a photo</li>
+            <li>Plans and weekly delivery calendar</li>
+            <li>Pause, resume, move, makeup days</li>
+            <li>Edit meals from the released menu</li>
+            <li>Cutoff countdown before lock</li>
+            <li>Support tickets by topic</li>
+            <li>Referral code and share sheet</li>
+            <li>Wallet: coins, coupons, bills</li>
+            <li>Addresses, cards, notifications</li>
           </ul>
         </div>
         <div>
-          <h3>For the kitchen</h3>
+          <h3>Kitchen desk</h3>
           <ul>
-            <li>Inquiries that become orders</li>
-            <li>The same delivery controls, for staff</li>
-            <li>Renewals desk</li>
-            <li>Dispatch and daily labels</li>
-            <li>Menu weeks and catalog</li>
-            <li>Payments, discounts, wallet</li>
-            <li>Analytics that match the order list</li>
-            <li>Customer notifications</li>
-            <li>Staff invites and roles</li>
+            <li>Overview, orders, inquiries</li>
+            <li>Customers and renewals</li>
+            <li>Dispatch and OptimoRoute</li>
+            <li>Tickets with chat and owner</li>
+            <li>Kitchen: labels, menus, catalog</li>
+            <li>Money: payments, wallet, discounts</li>
+            <li>Engage and insights</li>
+            <li>Settings and organization</li>
           </ul>
         </div>
       </div>
@@ -527,63 +409,167 @@
   </footer>
 
   <script>
-    const screens = [
-      {
-        src: "screens/home.jpg",
-        title: "Today’s tiffin, on the door",
-        body: "A public storefront with the day’s meal, an offer, and one path into a plan. Your kitchen’s name sits where this one does.",
-        alt: "Storefront with today’s tiffin and a button to build a plan"
-      },
-      {
-        src: "screens/subscribe-tight.jpg",
-        title: "Price before they pay",
-        body: "Diet, size, and add-ons, with the per-tiffin rate on the card. Area check and a welcome offer sit above the choice. Card or e-Transfer at the end.",
-        alt: "Plan builder with a vegetarian thali selected at $12.60 per tiffin"
-      },
-      {
-        src: "screens/menu.jpg",
-        title: "The released week",
-        body: "Monday to Friday for the published week. Subscribers pick dishes from this list. A day with no menu stays a label, not a placeholder.",
-        alt: "Weekly menu page for November 23 to 29 with today’s tiffin"
-      },
-      {
-        src: "screens/pricing.jpg",
-        title: "Rates, trials, longer plans",
-        body: "Ready plans from a single rate, a one-day trial, and a lower rate on longer plans. The total is calculated before anyone pays.",
-        alt: "Pricing page with home cooked lunch from $10 and a $14 trial"
-      },
-      {
-        src: "screens/pause.jpg",
-        title: "Pause, move, edit the meal",
-        body: "The customer calendar: tiffins left, a countdown to renew, and pause, move, or edit before cutoff. A paused day stays theirs.",
-        alt: "Phone showing a delivery calendar with pause, move, and edit meal"
+    const galleries = {
+      public: [
+        {
+          kicker: "01 · Storefront",
+          title: "Today’s tiffin, on the door",
+          body: "A public storefront with the day’s meal, an offer, and one path into a plan. Your kitchen’s name sits where this one does.",
+          src: "screens/home.jpg",
+          alt: "Storefront with today’s tiffin and a button to build a plan"
+        },
+        {
+          kicker: "02 · Subscribe",
+          title: "Price before they pay",
+          body: "Diet, size, and add-ons, with the per-tiffin rate on the card. Area check and a welcome offer sit above the choice.",
+          src: "screens/subscribe-tight.jpg",
+          alt: "Plan builder with a vegetarian thali selected"
+        },
+        {
+          kicker: "03 · Weekly menu",
+          title: "The released week",
+          body: "Monday to Friday for the published week. Subscribers pick dishes from this list.",
+          src: "screens/menu.jpg",
+          alt: "Weekly menu page with today’s tiffin"
+        },
+        {
+          kicker: "04 · Plans",
+          title: "Rates, trials, longer plans",
+          body: "Ready plans from a single rate, a one-day trial, and a lower rate on longer plans.",
+          src: "screens/pricing.jpg",
+          alt: "Pricing page with lunch from $10 and a trial"
+        }
+      ],
+      app: [
+        {
+          kicker: "01 · Deliveries",
+          title: "Plans and the week",
+          body: "Active and upcoming plans, tiffins left, last-tiffin countdown, and the week calendar with cutoff.",
+          src: "screens/cust-deliveries.jpg",
+          alt: "Customer deliveries home with Maharaja Thali plan"
+        },
+        {
+          kicker: "02 · A day",
+          title: "Meal, pause, or move",
+          body: "Open a day: see the meal, resume a pause, or move it. Add-ons stay on the order.",
+          src: "screens/cust-day.jpg",
+          alt: "Paused Wednesday delivery with meal line items"
+        },
+        {
+          kicker: "03 · Pause sheet",
+          title: "Tap days to hold",
+          body: "Pause or resume by the day, until cutoff the evening before. A paused day is never lost.",
+          src: "screens/cust-pause.jpg",
+          alt: "Pause deliveries sheet with a calendar of days"
+        },
+        {
+          kicker: "04 · Support",
+          title: "Tickets by topic",
+          body: "Delivery, food, plan, billing, packaging, feedback. Hours, history, and a new ticket in the same app.",
+          src: "screens/cust-support.jpg",
+          alt: "Customer support page with help topics"
+        },
+        {
+          kicker: "05 · Refer",
+          title: "Share and earn coins",
+          body: "Referral code, WhatsApp and link share, and coins in both wallets when the first plan is paid.",
+          src: "screens/cust-refer.jpg",
+          alt: "Refer page with referral code and coin rewards"
+        },
+        {
+          kicker: "06 · Wallet",
+          title: "Coins, coupons, bills",
+          body: "Spent, saved, and coin balance. Coupons, bills, and the transaction list in one place.",
+          src: "screens/cust-wallet.jpg",
+          alt: "Customer finances wallet with coins and totals"
+        },
+        {
+          kicker: "07 · Account",
+          title: "Profile to notifications",
+          body: "Security, payment methods, phone, addresses, notifications, and sign out.",
+          src: "screens/cust-account.jpg",
+          alt: "Customer account hub with profile and preferences"
+        },
+        {
+          kicker: "08 · Addresses",
+          title: "Where the meal goes",
+          body: "Default address and extras. Checkout uses the default; any delivery can pick another.",
+          src: "screens/cust-address.jpg",
+          alt: "Delivery addresses list with default address"
+        }
+      ],
+      desk: [
+        {
+          kicker: "01 · Tickets",
+          title: "Chat next to the order",
+          body: "Category, owner, priority, and a thread with the customer. Status moves from open to resolved. Contact details are blurred here.",
+          src: "screens/admin-tickets.jpg",
+          alt: "Kitchen desk tickets page with support conversation"
+        }
+      ]
+    };
+
+    function mountStudio(key) {
+      const section = document.querySelector('[data-studio="' + key + '"]');
+      const items = galleries[key];
+      const list = section.querySelector(".shots");
+      const img = section.querySelector("img");
+      const title = section.querySelector(".caption strong");
+      const body = section.querySelector(".caption p");
+      const count = section.querySelector(".count");
+      const total = String(items.length).padStart(2, "0");
+      const buttons = [];
+
+      items.forEach(function (item, index) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "shot";
+        button.setAttribute("role", "option");
+        button.setAttribute("aria-pressed", index === 0 ? "true" : "false");
+
+        const kicker = document.createElement("span");
+        kicker.className = "shot-kicker";
+        kicker.textContent = item.kicker;
+
+        const shotTitle = document.createElement("span");
+        shotTitle.className = "shot-title";
+        shotTitle.textContent = item.title;
+
+        button.appendChild(kicker);
+        button.appendChild(shotTitle);
+        button.addEventListener("click", function () { show(index); });
+        list.appendChild(button);
+        buttons.push(button);
+      });
+
+      function show(index) {
+        const item = items[index];
+        img.src = item.src;
+        img.alt = item.alt;
+        title.textContent = item.title;
+        body.textContent = item.body;
+        count.textContent = String(index + 1).padStart(2, "0") + " / " + total;
+        buttons.forEach(function (button, i) {
+          button.setAttribute("aria-pressed", i === index ? "true" : "false");
+        });
       }
-    ];
-    const buttons = [...document.querySelectorAll(".shot")];
-    const img = document.getElementById("screen");
-    const capTitle = document.getElementById("cap-title");
-    const capBody = document.getElementById("cap-body");
-    const capCount = document.getElementById("cap-count");
-    function show(index) {
-      const shot = screens[index];
-      img.src = shot.src;
-      img.alt = shot.alt;
-      capTitle.textContent = shot.title;
-      capBody.textContent = shot.body;
-      capCount.textContent = String(index + 1).padStart(2, "0") + " / 05";
-      buttons.forEach((button, i) => button.setAttribute("aria-pressed", i === index ? "true" : "false"));
+      show(0);
     }
-    buttons.forEach((button, i) => button.addEventListener("click", () => show(i)));
+
+    Object.keys(galleries).forEach(mountStudio);
+
     const menu = document.getElementById("mobile-menu");
     const burger = document.getElementById("hamburger");
-    burger.addEventListener("click", () => {
+    burger.addEventListener("click", function () {
       const open = menu.classList.toggle("open");
       burger.setAttribute("aria-expanded", open ? "true" : "false");
     });
-    menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
-      menu.classList.remove("open");
-      burger.setAttribute("aria-expanded", "false");
-    }));
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        menu.classList.remove("open");
+        burger.setAttribute("aria-expanded", "false");
+      });
+    });
   </script>
 </body>
 </html>
