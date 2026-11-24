@@ -434,6 +434,7 @@
   </footer>
 
   <script>
+    const SCREEN_V = "20261124b";
     const galleries = {
       public: [
         {
@@ -604,7 +605,7 @@
 
       function show(index) {
         const item = items[index];
-        img.src = item.src;
+        img.src = item.src + (item.src.indexOf("?") >= 0 ? "&" : "?") + "v=" + SCREEN_V;
         img.alt = item.alt;
         title.textContent = item.title;
         body.textContent = item.body;
