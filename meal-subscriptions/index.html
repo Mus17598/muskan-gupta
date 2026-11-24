@@ -127,6 +127,10 @@
     .stage {
       display: grid; grid-template-columns: minmax(220px, 280px) 1fr; gap: 22px; align-items: start;
     }
+    #app .stage {
+      grid-template-columns: minmax(200px, 260px) minmax(0, 1fr);
+      align-items: start;
+    }
     .shots { display: flex; flex-direction: column; border: var(--border); background: var(--white); }
     .shot {
       text-align: left; background: transparent; border: 0; border-bottom: var(--border);
@@ -139,7 +143,10 @@
       font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
     }
     .shot-title { display: block; margin-top: 4px; font-weight: 700; font-size: 1rem; letter-spacing: -0.02em; }
-    .frame { border: var(--border-thick); box-shadow: var(--shadow-lg); background: var(--black); }
+    .frame {
+      border: var(--border-thick); box-shadow: var(--shadow-lg); background: var(--black);
+      width: 100%; min-width: 0;
+    }
     .frame-bar {
       display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--lime);
       border-bottom: var(--border-thick); font-family: var(--mono); font-size: 0.72rem;
@@ -152,20 +159,23 @@
     .live { margin-left: auto; display: flex; align-items: center; gap: 6px; }
     .live::before { content: ""; width: 8px; height: 8px; background: var(--black); border-radius: 50%; }
     .frame:not(.wide) {
-      max-width: 380px; width: 100%; justify-self: center;
+      width: min(100%, 460px);
+      max-width: 100%;
+      justify-self: center;
     }
     .frame img {
       width: 100%; height: auto; aspect-ratio: 390 / 844;
-      object-fit: contain; object-position: top center; background: #111; margin: 0 auto;
+      object-fit: cover; object-position: top center; background: #111; margin: 0; display: block;
       image-rendering: auto;
     }
     .frame.wide {
-      max-width: none; width: 100%;
+      max-width: none; width: 100%; justify-self: stretch;
     }
     .frame.wide img {
       width: 100%; height: auto; aspect-ratio: 16 / 10;
-      object-fit: contain; object-position: top center;
+      object-fit: cover; object-position: top center;
     }
+    #public .frame.wide img { aspect-ratio: 1120 / 820; }
     .caption {
       display: flex; justify-content: space-between; gap: 16px; padding: 14px 16px 16px;
       background: var(--white); border-top: var(--border);
@@ -222,7 +232,7 @@
       .hero, .studio, .col, .close { padding-left: 22px; padding-right: 22px; }
       .hero-row, .studio-head, .close, footer { flex-direction: column; align-items: flex-start; }
       footer { padding-left: 22px; padding-right: 22px; }
-      .frame:not(.wide) { max-width: 320px; margin-inline: auto; }
+      .frame:not(.wide) { max-width: min(400px, 100%); margin-inline: auto; }
     }
     @media (max-width: 768px) {
       nav { padding: 0 16px; }
